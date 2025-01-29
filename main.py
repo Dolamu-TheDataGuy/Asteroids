@@ -14,12 +14,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        player.update(dt)
         screen.fill((0, 0, 0))
         player.draw(screen)
         pygame.display.flip()
-        dt = (
-            clock.tick(60) / 1000
-        )  # limit frame per second to 60 and gets delta time in seconds
+        dt = (clock.tick(60) / 1000)  # limit frame per second to 60 and gets delta time in seconds
 
 
 if __name__ == "__main__":
