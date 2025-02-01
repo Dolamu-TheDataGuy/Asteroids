@@ -39,6 +39,13 @@ def main():
                 # print(f"Collision dectected! Player at {player.position}, asteroid at {asteroid.position}")
                 print("Game over!")
                 sys.exit()
+                
+            for shot in shots:
+                if asteroid.check_collision(shot):
+                    shot.kill()
+                    asteroid.split()
+                    
+                    
         screen.fill((0, 0, 0))
 
         for obj in drawable:
